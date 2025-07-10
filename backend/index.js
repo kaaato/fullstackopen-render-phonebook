@@ -44,6 +44,7 @@ app.use(morgan('tiny', {
   skip: (req, res) => (req.method == "POST" && res.statusCode == 200)
 }))
 
+app.use(express.static('dist'))
 app.use(express.json())
 
 app.get('/api/persons', (request, response) => {
